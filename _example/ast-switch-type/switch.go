@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"go/ast"
 	"go/parser"
-	"fmt"
 	"os"
 )
 
