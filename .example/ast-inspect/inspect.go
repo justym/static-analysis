@@ -8,15 +8,16 @@ import (
 )
 
 func main(){
-	expr,err := parser.ParseExpr("v + 1")
+	expr,err := parser.ParseExpr("fmt.Println(1 + 1 + 1)")
 	if err != nil{
 		fmt.Println(err)
 		os.Exit(1)
 	}
 	ast.Inspect(expr,func (n ast.Node)bool{
 		if n != nil{
-			fmt.Printf("%T\n",n)
+			fmt.Printf("Pos: %d Type:%T\n",n.Pos(),n)
 		}
 		return true
 	})
 }
+
